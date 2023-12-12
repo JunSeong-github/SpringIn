@@ -10,7 +10,8 @@ import hello.core.order.OrderServiceImpl;
 
 public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 
@@ -20,7 +21,7 @@ public class MemberApp {
 
     }
 
-    public static class OrderApp {
+    /*public static class OrderApp {
 
         public static void main(String[] args) {
             MemberService memberService = new MemberServiceImpl();
@@ -33,5 +34,5 @@ public class MemberApp {
             Order order = orderService.createOrder(memberId, "itemA", 10000);
 
         }
-    }
+    }*/
 }
